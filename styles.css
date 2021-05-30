@@ -199,7 +199,7 @@ Modal
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 3rem;
+  font-size: 1rem;
   color: var(--clr-white);
   background: transparent;
   border-color: transparent;
@@ -226,6 +226,9 @@ Modal
   }
   .next-btn {
     right: -4rem;
+  }
+  .close-btn{
+    font-size: 3rem;
   }
 }
 
@@ -264,3 +267,65 @@ Modal
 .modal-img.selected {
   opacity: 1;
 }
+
+
+
+
+
+
+/* text-animation */
+
+
+
+
+
+.animation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #0a1931;
+  position: sticky;
+  top: 0;
+
+ 
+}
+
+.animation h2{
+  position: relative;
+  font-size: 5vw;
+  color: #252839;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.3vw #383d52;
+
+}
+
+
+
+.animation h2::before{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: white;
+  -webkit-text-stroke: 0vw #383d52;
+  border-right: 2px solid #01fe87;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+
+}
+
+
+@keyframes animate{
+  0%, 10%, 100%{
+      width: 0;
+  }
+
+  70%, 90%{
+      width: 100%;
+  }
+}
+
+
